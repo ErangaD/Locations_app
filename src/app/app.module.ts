@@ -9,23 +9,30 @@ import { HomePage } from '../pages/home/home';
 import {NewPlacePage} from "../pages/new-place/new-place";
 import {PlacesServices} from "../services/places.services";
 import { Geolocation } from '@ionic-native/geolocation';
+import {PlacePage} from "../pages/place/place";
+import {AgmCoreModule} from "@agm/core";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    NewPlacePage
+    NewPlacePage,
+    PlacePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA0xTZXcFK5JEfLaxFqWkzozW1CuMQECqE'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    NewPlacePage
+    NewPlacePage,
+    PlacePage
   ],
   providers: [
     StatusBar,

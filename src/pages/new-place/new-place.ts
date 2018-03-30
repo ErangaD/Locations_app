@@ -8,6 +8,8 @@ import { Geolocation } from '@ionic-native/geolocation';
 })
 export class NewPlacePage {
 
+  location: any;
+
   constructor(private placesSerivces: PlacesServices,
               private navCtrl:NavController,
               private geolocation: Geolocation) {
@@ -21,7 +23,7 @@ export class NewPlacePage {
   onLocateUser() {
     this.geolocation.getCurrentPosition()
       .then((location) => {
-      console.log('Got location')
+        this.location = location;
     }).catch((error) => {
       console.log('Error getting location', error);
     });

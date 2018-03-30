@@ -3,13 +3,13 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class PlacesServices {
-  private places: {title:string}[] = [];
+  private places: {title:string,location:{lat:number, lng:number}}[] = [];
 
   constructor(private storage:Storage){
 
   }
 
-  addPlace(place: {title:string}) {
+  addPlace(place: {title:string, location:{lat:number, lng:number}}) {
     this.places.push(place);
     this.storage.set('places', this.places);
   }
