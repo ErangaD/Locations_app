@@ -1,15 +1,16 @@
 import {Storage} from '@ionic/storage';
 import {Injectable} from "@angular/core";
+import {Place} from "../model/place.model";
 
 @Injectable()
 export class PlacesServices {
-  private places: {title:string,location:{lat:number, lng:number}}[] = [];
+  private places: Place[] = [];
 
   constructor(private storage:Storage){
 
   }
 
-  addPlace(place: {title:string, location:{lat:number, lng:number}}) {
+  addPlace(place: Place) {
     this.places.push(place);
     this.storage.set('places', this.places);
   }

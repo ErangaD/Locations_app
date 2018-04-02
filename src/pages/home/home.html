@@ -15,7 +15,8 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let place of places" (click)="onOpen()">
+    <ion-item *ngFor="let place of places"
+              (click)="onOpenPlace(place)">
       {{place.title}}
     </ion-item>
   </ion-list>

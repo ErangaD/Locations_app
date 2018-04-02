@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ViewController} from "ionic-angular";
+import {NavParams, ViewController} from "ionic-angular";
 
 /**
  * Generated class for the PlacePage page.
@@ -17,7 +17,11 @@ export class PlacePage {
   lat:number;
   lng:number;
 
-  constructor(private viewCtrl: ViewController) {
+  constructor(private viewCtrl: ViewController,
+              private navParams:NavParams) {
+
+    this.lat = this.navParams.data.location.lat;
+    this.lng = this.navParams.data.location.lng;
   }
 
   ionViewDidLoad() {
